@@ -18,7 +18,7 @@ spec:
         runAsGroup: 1000 # www-data group ID
       containers:
         - name: mealie
-          image: ghcr.io/mealie-recipes/mealie:v2.4.2
+          image: ghcr.io/mealie-recipes/mealie:v2.6.0
           ports:
             - containerPort: 9000
           securityContext:
