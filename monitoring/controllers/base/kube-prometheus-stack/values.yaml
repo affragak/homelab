@@ -5,4 +5,14 @@ grafana:
     annotations: {}
     labels: {}
     hosts:
-      - monitoring-staging.uclab8.net
+      - monitoring.uclab8.net
+
+  persistence:
+    enabled: true
+    type: sts
+    storageClassName: synology-iscsi-storage
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+    finalizers:
+      - kubernetes.io/pvc-protection
