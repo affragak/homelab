@@ -31,5 +31,5 @@ spec:
                 name: linkding-container-env
       volumes:
         - name: linkding-data
-          persistenVolumeClaim:
+          persistentVolumeClaim:
             claimName: linkding-data-pvc
