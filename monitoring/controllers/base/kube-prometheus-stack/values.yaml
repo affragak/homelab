@@ -1,0 +1,8 @@
+grafana:
+  adminPassword: grafana123
+  ingress:
+    enabled: true
+    annotations: {}
+    labels: {}
+    hosts:
+      - monitoring-staging.uclab8.net

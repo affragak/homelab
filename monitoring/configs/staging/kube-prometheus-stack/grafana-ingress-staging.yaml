@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+  name: grafana-ingress
+  namespace: monitoring
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: monitoring-staging.uclab8.net
+      http:
+        paths:
+          - backend:
+              service:
+                name: kube-prometheus-stack-grafana
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - monitoring-staging.uclab8.net
+      secretName: grafana-ingress-staging
