@@ -16,9 +16,9 @@ spec:
     spec:
       # envsubst in the entrypoint sh needs to write to /etc/php
       securityContext:
-        runAsUser: 101
-        runAsGroup: 101
-        fsGroup: 101
+        runAsUser: 65534
+        runAsGroup: 65534
+        fsGroup: 65534
 
       containers:
         - name: wallabag
