@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: wallabag
 resources:
   - ../../base/wallabag/
+  - wallabag-ingress-staging.yaml
