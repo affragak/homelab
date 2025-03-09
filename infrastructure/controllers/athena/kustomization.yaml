@@ -6,3 +6,4 @@ resources:
   - cloudnativepg
   - cert-manager
   - synology-csi
+  - longhorn
