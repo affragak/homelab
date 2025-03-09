@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - clusterissuer-staging.yaml
   - clusterissuer-production.yaml
-  - secret-cf-token.yaml
+  # - secret-cf-token.yaml
