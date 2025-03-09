@@ -1,0 +1,12 @@
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: lb-pool
+  namespace: kube-system
+spec:
+  blocks:
+    - start: "10.10.10.160"
+      stop: "10.10.10.169"
+  serviceSelector:
+    matchLabels:
+      org: empire
