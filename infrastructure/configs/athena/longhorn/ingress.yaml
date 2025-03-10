@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: longhorn-ingress
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
+    # cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   ingressClassName: cilium
   rules:
@@ -17,7 +17,7 @@ spec:
                 name: longhorn-frontend
                 port:
                   number: 80
-  tls:
-    - hosts:
-        - longhorn.uclab8.net
-      secretName: longhorn-tls
+  # tls:
+  # - hosts:
+  # - longhorn.uclab8.net
+  # secretName: longhorn-tls
