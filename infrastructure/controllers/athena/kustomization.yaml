@@ -5,5 +5,5 @@ resources:
   - external-secrets
   - cloudnativepg
   - cert-manager
-  - synology-csi
+  # - synology-csi
   - longhorn
