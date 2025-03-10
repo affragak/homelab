@@ -8,7 +8,7 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 5G
+      storage: 5Gi
 ---
 apiVersion: batch/v1
 kind: Job
