@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: test-claim
 spec:
-  storageClassName: ssynology-iscsi-storage
+  storageClassName: synology-iscsi-storage
   accessModes:
     - ReadWriteMany
   resources:
