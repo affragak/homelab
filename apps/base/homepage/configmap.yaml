@@ -36,7 +36,7 @@ data:
             icon: synology
             widget:
               type: diskstation
-              url: https://atlas.uclab8.net:5001
+              url: http://10.10.10.9:5000
               username: '{{ .Env.HOMEPAGE_SYNOLOGY_USERNAME }}'
               password: '{{ .Env.HOMEPAGE_SYNOLOGY_PASSWORD }}'
               volume: volume_1
