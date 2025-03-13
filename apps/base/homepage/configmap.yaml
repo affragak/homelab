@@ -36,7 +36,9 @@ data:
             icon: synology
             widget:
               type: diskstation
-              url: https://atlas.uclab8.net:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=3
+              url: https://atlas.uclab8.net:5001
+              api: SYNO.API.Auth
+              version: 3
               username: '{{ .Env.HOMEPAGE_SYNOLOGY_USERNAME }}'
               password: '{{ .Env.HOMEPAGE_SYNOLOGY_PASSWORD }}'
               volume: volume_1
