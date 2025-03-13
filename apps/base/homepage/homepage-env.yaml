@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-env
+  namespace: homepage
+data:
+  HOMEPAGE_SYNOLOGY_USERNAME: "{{HOMEPAGE_SYNOLOGY_USERNAME}}"
+  HOMEPAGE_SYNOLOGY_PASSWORD: "{{HOMEPAGE_SYNOLOGY_PASSWORD}}"

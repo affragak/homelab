@@ -37,6 +37,11 @@ spec:
             capabilities:
               drop:
                 - ALL
+          envFrom:
+            - configmapRef:
+                name: homepage-env
+            - secretRef:
+                name: homepage-synology-credentials
           ports:
             - name: http
               containerPort: 3000

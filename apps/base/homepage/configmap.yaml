@@ -30,9 +30,16 @@ data:
 
   services.yaml: |
     - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+        - Atlas:
+            href: https://atlas.uclab8.net:5001/
+            description: Atlas
+            icon: synology
+            widget:
+              type: diskstation
+              url: https://atlas.uclab8.net:5001
+              username: ${HOMEPAGE_SYNOLOGY_USERNAME}
+              password: ${HOMEPAGE_SYNOLOGY_PASSWORD}
+              volume: volume_1
 
     - My Second Group:
         - My Second Service:
