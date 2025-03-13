@@ -4,6 +4,6 @@ resources:
   - cilium
   - external-secrets
   - cloudnativepg
-  # - cert-manager
+  - cert-manager
   - synology-csi
   - longhorn
