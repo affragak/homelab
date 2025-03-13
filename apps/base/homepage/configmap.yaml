@@ -19,6 +19,15 @@ data:
         - Github:
             - abbr: GH
               href: https://github.com/
+    - Social:
+            - Linkdin:
+                - abbr: LD
+                  href: https://linkdin.com/
+    - News:
+            - Protothema:
+                - abbr: PT
+                  href: https://protothema.gr/
+
   services.yaml: |
     - My First Group:
         - My First Service:
