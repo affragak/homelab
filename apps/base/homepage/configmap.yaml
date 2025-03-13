@@ -31,7 +31,7 @@ data:
   services.yaml: |
     - My First Group:
         - Atlas:
-            href: https://atlas.uclab8.net:5001/
+            href: https://atlas.uclab8.net:5001
             description: atlas.uclab8.net
             icon: synology
             widget:
