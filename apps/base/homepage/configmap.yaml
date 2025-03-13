@@ -29,7 +29,7 @@ data:
               href: https://protothema.gr/
 
   services.yaml: |
-    - My First Group:
+    - Infrastructure:
         - Atlas:
             href: https://atlas.uclab8.net:5001
             description: atlas.uclab8.net
@@ -37,17 +37,13 @@ data:
             widget:
               type: diskstation
               url: https://atlas.uclab8.net:5001
-              api: SYNO.API.Auth
-              version: 3
               username: '{{ .Env.HOMEPAGE_SYNOLOGY_USERNAME }}'
               password: '{{ .Env.HOMEPAGE_SYNOLOGY_PASSWORD }}'
               volume: volume_1
-
     - My Second Group:
         - My Second Service:
             href: http://localhost/
             description: Homepage is the best
-
     - My Third Group:
         - My Third Service:
             href: http://localhost/
