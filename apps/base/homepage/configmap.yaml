@@ -36,9 +36,9 @@ data:
             icon: synology
             widget:
               type: diskstation
-              url: http://10.10.10.9:5000
-              username: "{{HOMEPAGE_SYNOLOGY_USERNAME}}"
-              password: "{{HOMEPAGE_SYNOLOGY_PASSWORD}}"
+              url: https://atlas.uclab8.net:5001
+              username: ${HOMEPAGE_SYNOLOGY_USERNAME}
+              password: ${HOMEPAGE_SYNOLOGY_PASSWORD}
               volume: volume_1
     - My Second Group:
         - My Second Service:
