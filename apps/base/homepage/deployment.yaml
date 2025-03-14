@@ -37,20 +37,6 @@ spec:
             capabilities:
               drop:
                 - ALL
-          env:
-            - name: HOMEPAGE_SYNOLOGY_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: homepage-synology-credentials
-                  key: HOMEPAGE_SYNOLOGY_USERNAME
-            - name: HOMEPAGE_SYNOLOGY_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: homepage-synology-credentials
-                  key: HOMEPAGE_SYNOLOGY_PASSWORD
-          command: ["/bin/sh", "-c"]
-          args:
-            - envsubst < /app/config/widgets.yaml > /tmp/widgets.yaml && mv /tmp/widgets.yaml /app/config/widgets.yaml && /entrypoint.sh
           ports:
             - name: http
               containerPort: 3000
