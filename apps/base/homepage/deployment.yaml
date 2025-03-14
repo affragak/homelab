@@ -42,12 +42,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: homepage-synology-credentials
-                  key: username
+                  key: HOMEPAGE_SYNOLOGY_USERNAME
             - name: HOMEPAGE_SYNOLOGY_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: homepage-synology-credentials
-                  key: password
+                  key: HOMEPAGE_SYNOLOGY_PASSWORD
           ports:
             - name: http
               containerPort: 3000
