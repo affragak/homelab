@@ -41,7 +41,6 @@ hubble:
       - flow
       - port-distribution
       - icmp
-      - httpV2
   relay:
     enabled: true
   ui:
