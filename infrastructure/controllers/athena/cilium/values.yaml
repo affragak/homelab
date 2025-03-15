@@ -31,16 +31,6 @@ k8sServiceHost: localhost
 k8sServicePort: 7445
 
 hubble:
-  enabled: true
-  metrics:
-    enableOpenMetrics: true
-    enabled:
-      - dns
-      - drop
-      - tcp
-      - flow
-      - port-distribution
-      - icmp
   relay:
     enabled: true
   ui:
