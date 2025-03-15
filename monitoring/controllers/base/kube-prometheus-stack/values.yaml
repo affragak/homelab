@@ -5,7 +5,7 @@ grafana:
     annotations: {}
     labels: {}
     hosts:
-      - monitoring.uclab8.net
+      - grafana.uclab8.net
 
   persistence:
     enabled: true
