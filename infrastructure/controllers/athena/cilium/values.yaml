@@ -31,6 +31,11 @@ k8sServiceHost: localhost
 k8sServicePort: 7445
 
 hubble:
+  enabled: true
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
   relay:
     enabled: true
   ui:
@@ -55,29 +60,13 @@ k8sClientRateLimit:
   burst: 20
 
 # metrics
-agent:
-  enabled: true
-  prometheus:
-    enabled: true
-    annotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "9962"
-  podAnnotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9962"
-
 prometheus:
-  metricsService: true
   enabled: true
   serviceMonitor:
     enabled: true
 
 operator:
-  enabled: true
   prometheus:
     enabled: true
     serviceMonitor:
       enabled: true
-    annotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "9963"
