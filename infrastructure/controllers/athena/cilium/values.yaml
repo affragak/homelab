@@ -31,28 +31,6 @@ k8sServiceHost: localhost
 k8sServicePort: 7445
 
 hubble:
-  enabled: true
-  metrics:
-    enableOpenMetrics: true
-    enabled:
-      - dns
-      - drop
-      - tcp
-      - flow
-      - port-distribution
-      - icmp
-      - httpV2:
-          exemplars: true
-          labelsContext:
-            - source_ip
-            - source_namespace
-            - source_workload
-            - destination_ip
-            - destination_namespace
-            - destination_workload
-            - traffic_direction
-  serviceMonitor:
-    enabled: true
   relay:
     enabled: true
   ui:
@@ -79,11 +57,7 @@ k8sClientRateLimit:
 # metrics
 prometheus:
   enabled: true
-  serviceMonitor:
-    enabled: true
 
 operator:
   prometheus:
     enabled: true
-    serviceMonitor:
-      enabled: true
