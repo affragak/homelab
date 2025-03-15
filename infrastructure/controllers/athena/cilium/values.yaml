@@ -53,3 +53,30 @@ ingressController:
 k8sClientRateLimit:
   qps: 15
   burst: 20
+
+# metrics
+agent:
+  prometheus:
+    enabled: true
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "9962"
+  podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9962"
+
+prometheus:
+  metricsService: true
+  enabled: true
+  serviceMonitor:
+    enabled: true
+
+operator:
+  enabled: true
+  prometheus:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "9963"
