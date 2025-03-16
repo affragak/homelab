@@ -11,7 +11,9 @@ kubeEtcd:
     - 10.10.10.63
   service:
     selector:
-      component: etcd
+      enabled: true
+      port: 2379
+      targetPort: 2379
   serviceMonitor:
     scheme: https
     insecureSkipVerify: false
