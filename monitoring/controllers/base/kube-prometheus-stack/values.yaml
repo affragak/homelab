@@ -5,15 +5,13 @@ kubeControllerManager:
     - 10.10.10.63
 
 kubeEtcd:
-  enabled: true
   endpoints:
     - 10.10.10.61
     - 10.10.10.62
     - 10.10.10.63
   service:
-    enabled: true
-    port: 2379
-    targetPort: 2379
+    selector:
+      component: etcd
   serviceMonitor:
     scheme: https
     insecureSkipVerify: false
