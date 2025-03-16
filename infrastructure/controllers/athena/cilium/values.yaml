@@ -31,10 +31,13 @@ k8sServiceHost: localhost
 k8sServicePort: 7445
 
 hubble:
+  enabled: true
   relay:
     enabled: true
   ui:
     enabled: true
+  metrics:
+    enabledOpenMetrics: true
 
 l2announcements:
   enabled: true
