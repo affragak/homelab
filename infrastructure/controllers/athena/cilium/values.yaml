@@ -60,7 +60,11 @@ k8sClientRateLimit:
 # metrics
 prometheus:
   enabled: true
+  serviceMonitor:
+    enabled: true
 
 operator:
   prometheus:
     enabled: true
+    serviceMonitor:
+      enabled: true
