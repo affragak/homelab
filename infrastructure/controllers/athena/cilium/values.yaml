@@ -38,12 +38,13 @@ hubble:
     enabled: true
   metrics:
     enabled:
-      - dns:query;ignoreAAAA
+      - dns
       - drop
       - tcp
       - flow
       - icmp
-      - http
+      - port-distribution
+      - httpV2: securityContext=pod;destinationContext=pod
     enabledOpenMetrics: true
     serviceMonitor:
       enabled: true
