@@ -37,7 +37,21 @@ hubble:
   ui:
     enabled: true
   metrics:
+    enabled:
+      - dns:query;ignoreAAAA
+      - drop
+      - tcp
+      - flow
+      - icmp
+      - http
     enabledOpenMetrics: true
+    serviceMonitor:
+      enabled: true
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9965"
+      labels:
+        release: kube-prometheus-stack
 
 l2announcements:
   enabled: true
