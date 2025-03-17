@@ -54,10 +54,10 @@ prometheus:
     podMonitorNamespaceSelector:
       matchLabels:
         podmonitorscrape: "true"
-    podMonitorSelectorNilUsesHelmValues: false
-    probeSelectorNilUsesHelmValues: false
-    ruleSelectorNilUsesHelmValues: false
-    serviceMonitorSelectorNilUsesHelmValues: false
+#    podMonitorSelectorNilUsesHelmValues: false
+#    probeSelectorNilUsesHelmValues: false
+#    ruleSelectorNilUsesHelmValues: false
+#    serviceMonitorSelectorNilUsesHelmValues: false
     additionalScrapeConfigs:
     - job_name: "kubernetes-pods"
       kubernetes_sd_configs:
