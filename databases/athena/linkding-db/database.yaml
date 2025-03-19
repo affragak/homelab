@@ -7,10 +7,11 @@ spec:
   description: Postgres cluster for the linkding application
   imageName: quay.io/enterprisedb/postgresql:16.1
   instances: 3
-  # plugins:
-  #   - name: barman-cloud.cloudnative-pg.io
-  #     parameters:
-  #       barmanObjectName: minio-store
+  plugins:
+    - name: barman-cloud.cloudnative-pg.io
+      isWALArchiver: true
+      parameters:
+        barmanObjectName: minio-store
   backup:
     barmanObjectStore:
       destinationPath: "s3://backups/"
@@ -20,7 +21,7 @@ spec:
           name: minio-s3
           key: ACCESS_KEY_ID
         secretAccessKey:
-          name: minio
+          name: minio-s3
           key: ACCESS_SECRET_KEY
       wal:
         compression: gzip
