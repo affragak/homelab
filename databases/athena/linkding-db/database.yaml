@@ -7,26 +7,26 @@ spec:
   description: Postgres cluster for the linkding application
   imageName: quay.io/enterprisedb/postgresql:16.1
   instances: 3
-  # plugins:
-  #   - name: barman-cloud.cloudnative-pg.io
-  #     parameters:
-  #       barmanObjectName: minio-store
-  # backup:
-  #   barmanObjectStore:
-  #     destinationPath: "s3://backups/"
-  #     endpointURL: "http://atlas.uclab8.net:9000"
-  #     s3Credentials:
-  #       accessKeyId:
-  #         name: minio-s3
-  #         key: ACCESS_KEY_ID
-  #       secretAccessKey:
-  #         name: minio
-  #         key: ACCESS_SECRET_KEY
-  #     wal:
-  #       compression: gzip
-  #     data:
-  #       compression: gzip
-  #   retentionPolicy: 7d
+  plugins:
+    - name: barman-cloud.cloudnative-pg.io
+      parameters:
+        barmanObjectName: minio-store
+  backup:
+    barmanObjectStore:
+      destinationPath: "s3://backups/"
+      endpointURL: "http://atlas.uclab8.net:9000"
+      s3Credentials:
+        accessKeyId:
+          name: minio-s3
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: minio
+          key: ACCESS_SECRET_KEY
+      wal:
+        compression: gzip
+      data:
+        compression: gzip
+    retentionPolicy: 7d
 
   inheritedMetadata:
     labels:
