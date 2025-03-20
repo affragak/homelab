@@ -40,8 +40,16 @@ spec:
   inheritedMetadata:
     labels:
       app: linkding-database
+
   storage:
-    size: 1Gi
+    pvcTemplate:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: synology-iscsi-storage
+      volumeMode: Filesystem
   bootstrap:
     initdb:
       database: linkding
