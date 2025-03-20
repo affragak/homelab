@@ -6,4 +6,5 @@ resources:
   - csi-driver.yml
   - node.yml
   - storage-class.yml
+  - storage-class-no-retain.yml
   - client-info-secret.yaml
