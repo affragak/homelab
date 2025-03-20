@@ -17,6 +17,16 @@ spec:
         runAsGroup: 33
         fsGroup: 33
 
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/db
+                    operator: NotIn
+                    values:
+                      - "true"
+
       containers:
         - name: linkding
           image: sissbruecker/linkding:1.38.0
