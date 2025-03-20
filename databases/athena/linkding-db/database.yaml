@@ -28,6 +28,15 @@ spec:
         compression: gzip
     retentionPolicy: 7d
 
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: node-role.kubernetes.io/db
+                operator: NotIn
+                values:
+                  - "true"
   inheritedMetadata:
     labels:
       app: linkding-database
