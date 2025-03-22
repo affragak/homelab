@@ -32,20 +32,20 @@ k8sServicePort: 7445
 
 hubble:
   enabled: true
+  metrics:
+    enabled:
+      - dns
+      - drop
+      - tcp
+      - flow
+      - port-distribution
+      - icmp
+      - httpV2:sourceContext=workload-name|pod-name|reserved-identity;destinationContext=workload-name|pod-name|reserved-identity;labelsContext=source_namespace,destination_namespace,traffic_direction
+    enableOpenMetrics: true
   relay:
     enabled: true
   ui:
     enabled: true
-    # metrics:
-    #   enabled:
-    #     - dns
-    #     - drop
-    #     - tcp
-    #     - flow
-    #     - port-distribution
-    #     - icmp
-    # - httpV2:sourceContext=workload-name|pod-name|reserved-identity;destinationContext=workload-name|pod-name|reserved-identity;labelsContext=source_namespace,destination_namespace,traffic_direction
-    # enableOpenMetrics: true
     serviceMonitor:
       enabled: true
       annotations:
