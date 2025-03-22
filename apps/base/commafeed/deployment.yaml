@@ -22,12 +22,27 @@ spec:
           image: athou/commafeed:4.5.0
           securityContext:
             allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop: ["ALL"]
+            seccompProfile:
+              type: "RuntimeDefault"
 
-          # envFrom:
-          #   - configMapRef:
-          #       name: commafeed-configmap
-          #   - secretRef:
-          #       name: commafeed-container-env
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: node-role.kubernetes.io/db
+                        operator: NotIn
+                        values:
+                          - "true"
+
+          envFrom:
+            - configMapRef:
+                name: commafeed-configmap
+            - secretRef:
+                name: commafeed-container-env
           ports:
             - containerPort: 8082
               protocol: TCP
