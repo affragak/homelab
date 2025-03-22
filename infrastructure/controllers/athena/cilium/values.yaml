@@ -32,11 +32,9 @@ k8sServicePort: 7445
 
 hubble:
   relay:
-    enabled: true
+    enabled: false
   ui:
-    enabled: true
-  tls:
-    enabled: true
+    enabled: false
   metrics:
     enabled:
       - dns
