@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: commafeed
 resources:
   - ../../base/commafeed
-  - commafeed-container-env-secret.yaml
   - configmap.yaml
   - cloudflare.yaml
   - cloudflare-secret.yaml
