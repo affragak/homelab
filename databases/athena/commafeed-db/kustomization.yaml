@@ -7,3 +7,4 @@ resources:
   - database.yaml
   - minio-s3-secret.yaml
   - barmanobjectstore.yaml
+  - scheduled-backup.yaml
