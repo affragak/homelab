@@ -71,7 +71,7 @@ spec:
         - selectorType: rw
           serviceTemplate:
             metadata:
-              name: linkding-db-v1
+              # name: linkding-db-v1
               labels:
                 org: empire
             spec:
