@@ -31,10 +31,11 @@ k8sServiceHost: localhost
 k8sServicePort: 7445
 
 hubble:
+  enabled: true
   relay:
-    enabled: false
+    enabled: true
   ui:
-    enabled: false
+    enabled: true
   metrics:
     enabled:
       - dns
