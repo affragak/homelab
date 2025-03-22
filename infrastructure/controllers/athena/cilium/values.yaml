@@ -35,6 +35,8 @@ hubble:
     enabled: true
   ui:
     enabled: true
+  tls:
+    enabled: true
   metrics:
     enabled:
       - dns
@@ -44,7 +46,7 @@ hubble:
       - icmp
       - port-distribution
       - httpV2: securityContext=pod;destinationContext=pod
-    enabledOpenMetrics: true
+    enableOpenMetrics: true
     serviceMonitor:
       enabled: true
       annotations:
