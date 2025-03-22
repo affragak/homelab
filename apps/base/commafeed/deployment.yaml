@@ -28,16 +28,6 @@ spec:
             seccompProfile:
               type: "RuntimeDefault"
 
-          affinity:
-            nodeAffinity:
-              requiredDuringSchedulingIgnoredDuringExecution:
-                nodeSelectorTerms:
-                  - matchExpressions:
-                      - key: node-role.kubernetes.io/db
-                        operator: NotIn
-                        values:
-                          - "true"
-
           envFrom:
             - configMapRef:
                 name: commafeed-configmap
