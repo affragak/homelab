@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: commafeed-configmap
 data:
-  quarkus.datasource.jdbc.url: "jdbc:postgresql://commafeed-db:5432/commafeed"
+  CF_DATABASE_DRIVERCLASS: "org.postgresql.Driver"
+  CF_DATABASE_URL: "jdbc:postgresql://commafeed-db.commafeed.svc.cluster.local:5432/commafeed"

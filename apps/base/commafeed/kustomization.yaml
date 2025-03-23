@@ -1,8 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - namespace.yaml
+  # - namespace.yaml
   - commafeed-container-env-secret.yaml
-  - storage.yaml
   - deployment.yaml
   - networking.yaml

@@ -36,16 +36,4 @@ spec:
           ports:
             - containerPort: 8082
               protocol: TCP
-          volumeMounts:
-            - mountPath: /log
-              name: logs
-            - mountPath: /commafeed/data
-              name: data
-      volumes:
-        - name: logs
-          persistentVolumeClaim:
-            claimName: commafeed-logs-pvc
-        - name: data
-          persistentVolumeClaim:
-            claimName: commafeed-data-pvc
       restartPolicy: Always
