@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   # - linkding
   # - mealie
-  - audiobookshelf
+  # - audiobookshelf
   # - commafeed
   - wallabag
