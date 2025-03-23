@@ -13,9 +13,24 @@ spec:
         app: audiobookshelf
     spec:
       securityContext:
+        allowPrivilegeEscalation: false
+        runAsNonRoot: true
+        capabilities:
+          drop: ["ALL"]
+        seccompProfile:
+          type: "RuntimeDefault"
         fsGroup: 1000 # www-data group ID
         runAsUser: 1000 # www-data user ID
         runAsGroup: 1000 # www-data group ID
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/db
+                    operator: NotIn
+                    values:
+                      - "true"
       containers:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.19.2
