@@ -22,6 +22,7 @@ spec:
         fsGroup: 1000 # www-data group ID
         runAsUser: 1000 # www-data user ID
         runAsGroup: 1000 # www-data group ID
+
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -36,13 +37,6 @@ spec:
           image: ghcr.io/advplyr/audiobookshelf:2.19.5
           ports:
             - containerPort: 3005
-          securityContext:
-          allowPrivilegeEscalation: false
-          runAsNonRoot: true
-          capabilities:
-            drop: ["ALL"]
-          seccompProfile:
-            type: "RuntimeDefault"
 
           volumeMounts:
             - name: audiobookshelf-audiobooks
