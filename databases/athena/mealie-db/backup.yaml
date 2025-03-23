@@ -1,0 +1,10 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Backup
+metadata:
+  name: mealie-db-production-cnpg-v0
+spec:
+  method: plugin
+  cluster:
+    name: mealie-db-production-cnpg-v0
+  pluginConfiguration:
+    name: barman-cloud.cloudnative-pg.io

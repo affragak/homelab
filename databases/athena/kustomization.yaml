@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - linkding-db
   - commafeed-db
+  - mealie-db
