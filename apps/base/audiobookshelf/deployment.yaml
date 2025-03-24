@@ -12,16 +12,16 @@ spec:
       labels:
         app: audiobookshelf
     spec:
-      securityContext:
-        # allowPrivilegeEscalation: false
-        # runAsNonRoot: true
-        #   capabilities:
-        #     drop: ["ALL"]
-        #   seccompProfile:
-        #     type: "RuntimeDefault"
-        fsGroup: 1000 # www-data group ID
-        runAsUser: 1000 # www-data user ID
-        runAsGroup: 1000 # www-data group ID
+      # securityContext:
+      # allowPrivilegeEscalation: false
+      # runAsNonRoot: true
+      #   capabilities:
+      #     drop: ["ALL"]
+      #   seccompProfile:
+      #     type: "RuntimeDefault"
+      # fsGroup: 1000 # www-data group ID
+      # runAsUser: 1000 # www-data user ID
+      # runAsGroup: 1000 # www-data group ID
 
       affinity:
         nodeAffinity:
@@ -37,7 +37,10 @@ spec:
           image: ghcr.io/advplyr/audiobookshelf:2.19.5
           ports:
             - containerPort: 3005
-
+          securityContext:
+            fsGroup: 1000
+            runAsUser: 1000
+            runAsGroup: 1000
           volumeMounts:
             - name: audiobookshelf-audiobooks
               mountPath: /audiobooks
