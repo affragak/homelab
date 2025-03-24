@@ -1,0 +1,92 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app.kubernetes.io/instance: blog-uclab8
+    app.kubernetes.io/name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.25.4
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - mountPath: /www
+          name: www
+        - mountPath: /etc/nginx/conf.d
+          name: nginx-server-block
+      resources:
+        requests:
+          ephemeral-storage: 2Gi
+        limits:
+          ephemeral-storage: 4Gi
+
+    - name: git-pull
+      image: bitnami/git
+      command:
+        - /bin/bash
+        - -ec
+        - |
+          mkdir -p /root/.ssh
+                    cp /etc/git-secret/id_rsa /root/.ssh/
+                    chmod 600 /root/.ssh/id_rsa
+                    ssh-keyscan github.com > /root/.ssh/known_hosts
+
+          while true; do
+            cd /www && git -c safe.directory=/www pull origin main
+            sleep 60
+          done
+      volumeMounts:
+        - mountPath: /www
+          name: www
+        - mountPath: /etc/git-secret
+          name: git-ssh-key
+          readOnly: true
+      resources:
+        requests:
+          ephemeral-storage: 2Gi
+        limits:
+          ephemeral-storage: 4Gi
+
+  initContainers:
+    - name: git-clone
+      image: bitnami/git
+      command:
+        - /bin/bash
+        - -c
+        - |
+          mkdir -p /root/.ssh
+          cp /etc/git-secret/id_rsa /root/.ssh/
+          chmod 600 /root/.ssh/id_rsa
+          ssh-keyscan github.com > /root/.ssh/known_hosts
+
+          shopt -s dotglob
+          git clone git@github.com:affragak/blog.git --no-checkout --branch main /tmp/www;
+          cd /tmp/www;
+          git sparse-checkout init --cone;
+          git sparse-checkout set public;
+          git checkout;
+          mv /tmp/www/* /www
+      volumeMounts:
+        - mountPath: /www
+          name: www
+        - mountPath: /etc/git-secret
+          name: git-ssh-key
+          readOnly: true
+      resources:
+        requests:
+          ephemeral-storage: 2Gi
+        limits:
+          ephemeral-storage: 4Gi
+
+  volumes:
+    - name: www
+      emptyDir: {}
+    - name: nginx-server-block
+      configMap:
+        name: nginx-server-block
+    - name: git-ssh-key
+      secret:
+        secretName: git-ssh-key
+        defaultMode: 0400
