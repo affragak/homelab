@@ -12,7 +12,7 @@ spec:
     name: git-ssh-key
     creationPolicy: Owner
   data:
-    - secretKey: git-ssh-key
+    - secretKey: id_rsa
       remoteRef:
         key: git-ssh-key
         property: id_rsa
