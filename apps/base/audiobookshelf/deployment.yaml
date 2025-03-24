@@ -13,8 +13,8 @@ spec:
         app: audiobookshelf
     spec:
       securityContext:
-        allowPrivilegeEscalation: false
-        runAsNonRoot: true
+        # allowPrivilegeEscalation: false
+        # runAsNonRoot: true
         #   capabilities:
         #     drop: ["ALL"]
         #   seccompProfile:
