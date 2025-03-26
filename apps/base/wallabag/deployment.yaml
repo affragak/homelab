@@ -30,21 +30,22 @@ spec:
           envFrom:
             - configMapRef:
                 name: wallabag-configmap
-
+            - secretRef:
+                name: wallabag-container-env
           ports:
             - containerPort: 80
               protocol: TCP
-          volumeMounts:
-            - name: wallabag-data
-              mountPath: /var/www/wallabag/data
-            - name: wallabag-images
-              mountPath: /var/www/wallabag/web/assets/images
-
-      volumes:
-        - name: wallabag-data
-          persistentVolumeClaim:
-            claimName: wallabag-data-pvc
-        - name: wallabag-images
-          persistentVolumeClaim:
-            claimName: wallabag-images-pvc
+      #     volumeMounts:
+      #       - name: wallabag-data
+      #         mountPath: /var/www/wallabag/data
+      #       - name: wallabag-images
+      #         mountPath: /var/www/wallabag/web/assets/images
+      #
+      # volumes:
+      #   - name: wallabag-data
+      #     persistentVolumeClaim:
+      #       claimName: wallabag-data-pvc
+      #   - name: wallabag-images
+      #     persistentVolumeClaim:
+      #       claimName: wallabag-images-pvc
       restartPolicy: Always
