@@ -6,4 +6,4 @@ resources:
   - mealie
   - audiobookshelf
   - blog
-  # - wallabag
+  - wallabag
