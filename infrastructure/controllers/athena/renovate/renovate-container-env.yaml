@@ -12,7 +12,7 @@ spec:
     name: renovate-container-env
     creationPolicy: Owner
   data:
-    - secretKey: renovate-container-env
+    - secretKey: RENOVATE_TOKEN
       remoteRef:
         key: renovate-athena-token
         property: RENOVATE_TOKEN
