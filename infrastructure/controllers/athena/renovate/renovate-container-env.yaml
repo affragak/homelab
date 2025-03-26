@@ -15,4 +15,4 @@ spec:
     - secretKey: renovate-container-env
       remoteRef:
         key: renovate-athena-token
-        property: RENOVATE-TOKEN
+        property: RENOVATE_TOKEN
