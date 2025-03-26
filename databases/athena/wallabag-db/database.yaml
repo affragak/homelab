@@ -1,0 +1,70 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: wallabag-db-production-cnpg-v0
+  namespace: wallabag
+spec:
+  description: Postgres cluster for the wallabag application
+  imageName: quay.io/enterprisedb/postgresql:16.1
+  instances: 3
+  plugins:
+    - name: barman-cloud.cloudnative-pg.io
+      parameters:
+        barmanObjectName: minio-s3
+  backup:
+    barmanObjectStore:
+      destinationPath: "s3://backups/"
+      endpointURL: "http://atlas.uclab8.net:9000"
+      s3Credentials:
+        accessKeyId:
+          name: minio-s3
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: minio-s3
+          key: ACCESS_SECRET_KEY
+      wal:
+        compression: gzip
+      data:
+        compression: gzip
+    retentionPolicy: 7d
+
+  affinity:
+    nodeSelector:
+      node-role.kubernetes.io/db: "true"
+
+  inheritedMetadata:
+    labels:
+      app: wallabag-database
+  storage:
+    pvcTemplate:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 2Gi
+      storageClassName: synology-iscsi-storage
+      volumeMode: Filesystem
+
+  bootstrap:
+    initdb:
+      database: wallabag
+      owner: affragak
+      secret:
+        name: wallabag-db-creds
+  resources:
+    requests:
+      memory: 320Mi
+  managed:
+    services:
+      disabledDefaultServices:
+        - ro
+        - r
+      additional:
+        - selectorType: rw
+          serviceTemplate:
+            metadata:
+              name: wallabag-db
+              labels:
+                org: empire
+            spec:
+              type: ClusterIP
