@@ -48,7 +48,7 @@ spec:
   bootstrap:
     initdb:
       database: wallabag
-      owner: affragak
+      owner: wallabag
       secret:
         name: wallabag-db-creds
   resources:
