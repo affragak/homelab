@@ -6,6 +6,6 @@ resources:
   - minio-s3-secret.yaml
   - barmanobjectstore.yaml
   - mealie-db-creds.yaml
-  - database.yaml
+  # - database.yaml
   - scheduled-backup.yaml
   - mealie-db.yaml
