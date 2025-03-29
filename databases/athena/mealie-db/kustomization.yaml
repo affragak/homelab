@@ -8,3 +8,4 @@ resources:
   - mealie-db-creds.yaml
   - database.yaml
   - scheduled-backup.yaml
+  - mealie-db.yaml
