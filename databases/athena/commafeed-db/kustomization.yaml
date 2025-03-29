@@ -8,4 +8,4 @@ resources:
   - minio-s3-secret.yaml
   - barmanobjectstore.yaml
   - scheduled-backup.yaml
-  - commafeed-db.yaml
+  # - commafeed-db.yaml
