@@ -4,7 +4,7 @@ namespace: commafeed
 resources:
   - namespace.yaml
   - commafeed-db-creds.yaml
-  - database.yaml
+  # - database.yaml
   - minio-s3-secret.yaml
   - barmanobjectstore.yaml
   - scheduled-backup.yaml
