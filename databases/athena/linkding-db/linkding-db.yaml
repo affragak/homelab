@@ -7,6 +7,9 @@ spec:
   description: Postgres cluster for the linkding application
   imageName: quay.io/enterprisedb/postgresql:16.1
   instances: 3
+  monitoring:
+    enablePodMonitor: true
+
   plugins:
     - name: barman-cloud.cloudnative-pg.io
       parameters:
