@@ -7,6 +7,9 @@ spec:
   description: Postgres cluster for the commafeed application
   imageName: quay.io/enterprisedb/postgresql:16.1
   instances: 3
+  monitoring:
+    enablePodMonitor: true
+
   plugins:
     - name: barman-cloud.cloudnative-pg.io
       parameters:
@@ -29,14 +32,9 @@ spec:
     retentionPolicy: 7d
 
   affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-          - matchExpressions:
-              - key: node-role.kubernetes.io/db
-                operator: NotIn
-                values:
-                  - "true"
+    nodeSelector:
+      node-role.kubernetes.io/db: "true"
+
   inheritedMetadata:
     labels:
       app: commafeed-database
