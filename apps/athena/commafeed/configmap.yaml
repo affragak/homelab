@@ -4,4 +4,4 @@ metadata:
   name: commafeed-configmap
 data:
   CF_DATABASE_DRIVERCLASS: "org.postgresql.Driver"
-  CF_DATABASE_URL: "jdbc:postgresql://commafeed-db.commafeed.svc.cluster.local:5432/commafeed"
+  CF_DATABASE_URL: "jdbc:postgresql://commafeed-db-v1.commafeed.svc.cluster.local:5432/commafeed"
