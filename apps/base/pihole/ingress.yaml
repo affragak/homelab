@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+  name: pihole-ingress
+spec:
+  ingressClassName: cilium
+  rules:
+    - host: pihole.uclab8.net
+      http:
+        paths:
+          - backend:
+              service:
+                name: pihole
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - pihole.uclab8.net
+      secretName: pihole-ingress-prod-tls
