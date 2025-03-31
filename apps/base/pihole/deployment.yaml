@@ -15,8 +15,6 @@ spec:
       labels:
         app: pihole
     spec:
-      nodeSelector:
-        worker: "true"
       containers:
         - image: visibilityspots/cloudflared:v2025.2.1
           imagePullPolicy: IfNotPresent
