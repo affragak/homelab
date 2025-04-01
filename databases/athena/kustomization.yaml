@@ -4,4 +4,4 @@ resources:
   - linkding-db
   - commafeed-db
   - mealie-db
-  # - wallabag-db
+  - wallabag-db
