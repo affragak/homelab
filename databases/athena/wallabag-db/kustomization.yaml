@@ -8,4 +8,4 @@ resources:
   - wallabag-db-creds.yaml
   - database.yaml
   - scheduled-backup.yaml
-  # - wallabag-db.yaml
+  - wallabag-db.yaml
