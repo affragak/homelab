@@ -18,6 +18,10 @@ spec:
   bootstrap:
     recovery:
       source: clusterBackup
+      # database: wallabag
+      # owner: wallabag
+      # secret:
+      #   name: wallabag-db-creds
 
   externalClusters:
     - name: clusterBackup
