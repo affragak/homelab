@@ -112,3 +112,6 @@ operator:
       prometheus.io/port: "9963"
       labels:
         release: kube-prometheus-stack
+
+envoy:
+  xffNumTrustedHopsL7PolicyIngress: 1
