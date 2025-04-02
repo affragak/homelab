@@ -68,6 +68,10 @@ spec:
           volumeMounts:
             - mountPath: /etc/pihole
               name: pihole
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
       restartPolicy: Always
 
       volumes:
