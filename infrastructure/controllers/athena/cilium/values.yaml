@@ -114,4 +114,4 @@ operator:
         release: kube-prometheus-stack
 
 envoy:
-  xffNumTrustedHopsL7PolicyIngress: 2
+  xffNumTrustedHopsL7PolicyIngress: 4
