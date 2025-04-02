@@ -70,8 +70,8 @@ ingressController:
 # Calculated based on 30 services
 # https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
 
-enableIPv4Masquerade: false
-enableIPv6Masquerade: false
+# enableIPv4Masquerade: false
+# enableIPv6Masquerade: false
 
 k8sClientRateLimit:
   qps: 15
