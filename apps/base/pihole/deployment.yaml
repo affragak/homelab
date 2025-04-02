@@ -15,6 +15,15 @@ spec:
       labels:
         app: pihole
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/db
+                    operator: NotIn
+                    values:
+                      - "true"
       containers:
         - image: visibilityspots/cloudflared:v2025.2.1
           imagePullPolicy: IfNotPresent
@@ -60,11 +69,8 @@ spec:
           volumeMounts:
             - mountPath: /etc/pihole
               name: pihole
-          securityContext:
-            capabilities:
-              add:
-                - NET_ADMIN
       restartPolicy: Always
+
       volumes:
         - name: pihole
           persistentVolumeClaim:
