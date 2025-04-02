@@ -41,8 +41,6 @@ spec:
         - env:
             - name: TZ
               value: "Europe/Berlin"
-            - name: WEBPASSWORD
-              value: dCloud123!
             - name: FTLCONF_REPLY_ADDR4
               value: pihole
             - name: PIHOLE_DNS_
