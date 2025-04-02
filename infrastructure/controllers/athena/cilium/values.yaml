@@ -64,7 +64,7 @@ ingressController:
   enabled: true
   default: true
   loadbalancerMode: shared
-
+  enableProxyProtocol: true
 # Calculated based on 30 services
 # https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
 
