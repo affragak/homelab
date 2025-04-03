@@ -64,9 +64,9 @@ ingressController:
   enabled: true
   default: true
   loadbalancerMode: shared
-  enableProxyProtocol: true
-  service:
-    externalTrafficPolicy: Local
+  # enableProxyProtocol: true
+  # service:
+  # externalTrafficPolicy: Local
 # Calculated based on 30 services
 # https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
 # bpf:
@@ -112,6 +112,5 @@ operator:
       prometheus.io/port: "9963"
       labels:
         release: kube-prometheus-stack
-
-envoy:
-  xffNumTrustedHopsL7PolicyIngress: 4
+# envoy:
+# xffNumTrustedHopsL7PolicyIngress: 4
