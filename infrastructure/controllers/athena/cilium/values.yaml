@@ -65,8 +65,8 @@ ingressController:
   default: true
   loadbalancerMode: shared
   # enableProxyProtocol: true
-  # service:
-  # externalTrafficPolicy: Local
+  service:
+    externalTrafficPolicy: Local
 # Calculated based on 30 services
 # https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
 # bpf:
