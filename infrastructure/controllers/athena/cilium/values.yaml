@@ -73,8 +73,8 @@ bpf:
   lbAlgorithmAnnotation: true
 loadBalancer:
   mode: dsr
-# enableIPv4Masquerade: false
-# enableIPv6Masquerade: false
+enableIPv4Masquerade: false
+enableIPv6Masquerade: false
 
 k8sClientRateLimit:
   qps: 15
