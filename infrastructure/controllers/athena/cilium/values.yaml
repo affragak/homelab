@@ -69,10 +69,10 @@ ingressController:
     externalTrafficPolicy: Local
 # Calculated based on 30 services
 # https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
-bpf:
-  lbAlgorithmAnnotation: true
-loadBalancer:
-  mode: dsr
+# bpf:
+#   lbAlgorithmAnnotation: true
+# loadBalancer:
+#   mode: dsr
 enableIPv4Masquerade: false
 enableIPv6Masquerade: false
 
