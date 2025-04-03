@@ -67,14 +67,6 @@ ingressController:
   # enableProxyProtocol: true
   service:
     externalTrafficPolicy: Local
-# Calculated based on 30 services
-# https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
-# bpf:
-# lbAlgorithmAnnotation: true
-# loadBalancer:
-# mode: dsr
-# enableIPv4Masquerade: false
-# enableIPv6Masquerade: false
 
 k8sClientRateLimit:
   qps: 15
@@ -112,5 +104,3 @@ operator:
       prometheus.io/port: "9963"
       labels:
         release: kube-prometheus-stack
-# envoy:
-# xffNumTrustedHopsL7PolicyIngress: 4
