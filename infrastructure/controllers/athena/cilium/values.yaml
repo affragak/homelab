@@ -1,7 +1,7 @@
 ipam:
   mode: kubernetes
 
-kubeProxyReplacement: strict
+kubeProxyReplacement: true
 
 securityContext:
   capabilities:
@@ -27,7 +27,7 @@ cgroup:
     enabled: false
   hostRoot: /sys/fs/cgroup
 
-k8sServiceHost: 10.10.10.60
+k8sServiceHost: localhost
 k8sServicePort: 7445
 
 hubble:
@@ -69,11 +69,10 @@ ingressController:
     externalTrafficPolicy: Local
 # Calculated based on 30 services
 # https://docs.cilium.io/en/latest/network/l2-announcements/#sizing-client-rate-limit
-tunnel: disabled
-bpf:
-  lbAlgorithmAnnotation: true
-loadBalancer:
-  mode: dsr
+# bpf:
+# lbAlgorithmAnnotation: true
+# loadBalancer:
+# mode: dsr
 # enableIPv4Masquerade: false
 # enableIPv6Masquerade: false
 
