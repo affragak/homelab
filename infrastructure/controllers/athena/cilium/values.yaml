@@ -65,8 +65,8 @@ ingressController:
   default: true
   loadbalancerMode: shared
   # enableProxyProtocol: true
-  # service:
-  # externalTrafficPolicy: Local
+  service:
+    externalTrafficPolicy: Local
 
 k8sClientRateLimit:
   qps: 15
