@@ -68,6 +68,9 @@ ingressController:
   service:
     externalTrafficPolicy: Local
 
+envoy:
+  xffNumTrustedHopsL7PolicyIngress: 1
+
 k8sClientRateLimit:
   qps: 15
   burst: 20
