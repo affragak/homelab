@@ -64,6 +64,7 @@ ingressController:
   enabled: true
   default: true
   loadbalancerMode: shared
+  enableProxyProtocol: true
   service:
     externalTrafficPolicy: Local
 
