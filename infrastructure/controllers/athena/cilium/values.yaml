@@ -64,12 +64,6 @@ ingressController:
   enabled: true
   default: true
   loadbalancerMode: shared
-  enableProxyProtocol: true
-  service:
-    externalTrafficPolicy: Local
-
-envoy:
-  xffNumTrustedHopsL7PolicyIngress: 1
 
 k8sClientRateLimit:
   qps: 15
