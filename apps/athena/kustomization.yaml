@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - linkding
   - commafeed
-  - mealie
+  # - mealie
   - audiobookshelf
   - blog
   - wallabag
