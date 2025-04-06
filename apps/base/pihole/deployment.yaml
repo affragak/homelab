@@ -19,7 +19,7 @@ spec:
         kubernetes.io/hostname: k8s-worker-prod-01
 
       containers:
-        - image: visibilityspots/cloudflared:v2025.2.1
+        - image: visibilityspots/cloudflared:v2025.4.0
           imagePullPolicy: IfNotPresent
           name: cloudflared
           ports:
