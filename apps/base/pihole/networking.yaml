@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: pihole
-    org: empire
+    org: worker1
   name: pihole
 spec:
   ports:
@@ -30,5 +30,5 @@ spec:
   selector:
     app: pihole
   externalTrafficPolicy: Local
-  loadBalancerIP: 10.10.10.169 # this is your DNS IP, NOT THE GUI!
+  loadBalancerIP: 10.10.10.20 # this is your DNS IP, NOT THE GUI!
   type: LoadBalancer

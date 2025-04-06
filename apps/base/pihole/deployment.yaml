@@ -16,7 +16,11 @@ spec:
         app: pihole
     spec:
       nodeSelector:
-        worker: "true"
+      matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+            - k8s-worker-prod-01
       containers:
         - image: visibilityspots/cloudflared:v2025.2.1
           imagePullPolicy: IfNotPresent
