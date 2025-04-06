@@ -23,15 +23,9 @@ spec:
         runAsUser: 1000
         runAsGroup: 1000
 
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: node-role.kubernetes.io/db
-                    operator: NotIn
-                    values:
-                      - "true"
+      nodeSelector:
+        kubernetes.io/hostname: k8s-worker-prod-01
+
       containers:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.19.5
