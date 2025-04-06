@@ -6,8 +6,6 @@ metadata:
     app.kubernetes.io/instance: blog-uclab8
     app.kubernetes.io/name: nginx
 spec:
-  nodeSelector:
-    kubernetes.io/hostname: k8s-worker-prod-02
   containers:
     - name: nginx
       image: nginx:1.25.4
