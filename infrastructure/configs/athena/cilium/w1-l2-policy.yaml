@@ -9,7 +9,7 @@ spec:
       org: worker1
   nodeSelector:
     matchExpressions:
-      - key: node-role.kubernetes.io/hostname
+      - key: kubernetes.io/hostname
         operator: In
         values:
           - k8s-worker-prod-01
