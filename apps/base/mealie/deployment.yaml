@@ -16,6 +16,17 @@ spec:
         fsGroup: 1000 # www-data group ID
         runAsUser: 1000 # www-data user ID
         runAsGroup: 1000 # www-data group ID
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/db
+                    operator: NotIn
+                    values:
+                      - "true"
+
       containers:
         - name: mealie
           image: ghcr.io/mealie-recipes/mealie:v2.6.0
@@ -30,10 +41,10 @@ spec:
             - containerPort: 9000
           securityContext:
             allowPrivilegeEscalation: false
-          volumeMounts:
-            - name: mealie-data
-              mountPath: /app/data
-      volumes:
-        - name: mealie-data
-          persistentVolumeClaim:
-            claimName: mealie-data-pvc
+      #     volumeMounts:
+      #       - name: mealie-data
+      #         mountPath: /app/data
+      # volumes:
+      #   - name: mealie-data
+      #     persistentVolumeClaim:
+      #       claimName: mealie-data-pvc
