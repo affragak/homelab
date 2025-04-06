@@ -36,15 +36,14 @@ spec:
                 name: mealie-configmap
             - secretRef:
                 name: mealie-container-env
-
           ports:
             - containerPort: 9000
           securityContext:
             allowPrivilegeEscalation: false
-      #     volumeMounts:
-      #       - name: mealie-data
-      #         mountPath: /app/data
-      # volumes:
-      #   - name: mealie-data
-      #     persistentVolumeClaim:
-      #       claimName: mealie-data-pvc
+          volumeMounts:
+            - name: mealie-data
+              mountPath: /app/data
+      volumes:
+        - name: mealie-data
+          persistentVolumeClaim:
+          claimName: mealie-data-pvc
