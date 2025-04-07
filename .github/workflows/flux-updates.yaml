@@ -28,6 +28,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
+            token: ${{ secrets.FLUX_UPDATE_PAT }}
             branch: update-flux
             commit-message: Update to ${{ steps.update.outputs.flux_version }}
             title: Update to ${{ steps.update.outputs.flux_version }}
