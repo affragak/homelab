@@ -5,5 +5,5 @@ resources:
   - external-secrets
   - synology-csi
   - cert-manager
-  # - cloudnativepg
+  - cloudnativepg
   # - renovate
