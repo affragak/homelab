@@ -81,24 +81,24 @@ k8sClientRateLimit:
 #     prometheus.io/scrape: "true"
 #     prometheus.io/port: "9962"
 
-prometheus:
-  enabled: true
-  serviceMonitor:
-    enabled: true
-    labels:
-      release: kube-prometheus-stack
-    annotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "9962"
+# prometheus:
+#   enabled: true
+#   serviceMonitor:
+#     enabled: true
+#     labels:
+#       release: kube-prometheus-stack
+#     annotations:
+#       prometheus.io/scrape: "true"
+#       prometheus.io/port: "9962"
 
 operator:
   replicas: 1
-  prometheus:
-    enabled: true
-    serviceMonitor:
-      enabled: true
-    annotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "9963"
-      labels:
-        release: kube-prometheus-stack
+  # prometheus:
+  #   enabled: true
+  #   serviceMonitor:
+  #     enabled: true
+  #   annotations:
+  #     prometheus.io/scrape: "true"
+  #     prometheus.io/port: "9963"
+  #     labels:
+  #       release: kube-prometheus-stack
