@@ -65,7 +65,7 @@ ingressController:
   default: true
   loadbalancerMode: shared
   service:
-    label:
+    labels:
       org: olympus
 
 k8sClientRateLimit:
