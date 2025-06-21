@@ -32,27 +32,27 @@ k8sServicePort: 7445
 
 hubble:
   enabled: true
-  metrics:
-    enabled:
-      - dns
-      - drop
-      - tcp
-      - flow
-      - port-distribution
-      - icmp
-      - httpV2:sourceContext=workload-name|pod-name|reserved-identity;destinationContext=workload-name|pod-name|reserved-identity;labelsContext=source_namespace,destination_namespace,traffic_direction
-    enableOpenMetrics: true
+  # metrics:
+  #   enabled:
+  #     - dns
+  #     - drop
+  #     - tcp
+  #     - flow
+  #     - port-distribution
+  #     - icmp
+  #     - httpV2:sourceContext=workload-name|pod-name|reserved-identity;destinationContext=workload-name|pod-name|reserved-identity;labelsContext=source_namespace,destination_namespace,traffic_direction
+  #   enableOpenMetrics: true
   relay:
     enabled: true
   ui:
     enabled: true
-    serviceMonitor:
-      enabled: true
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "9965"
-      labels:
-        release: kube-prometheus-stack
+    # serviceMonitor:
+    #   enabled: true
+    #   annotations:
+    #     prometheus.io/scrape: "true"
+    #     prometheus.io/port: "9965"
+    #   labels:
+    #     release: kube-prometheus-stack
 
 l2announcements:
   enabled: true
