@@ -7,9 +7,9 @@ spec:
   serviceSelector:
     matchLabels:
       org: olympus
-  nodeSelector:
-    matchExpressions:
-      - key: node-role.kubernetes.io/control-plane
-        operator: DoesNotExist
-  externalIPs: true
+  # nodeSelector:
+  #   matchExpressions:
+  #     - key: node-role.kubernetes.io/control-plane
+  #       operator: DoesNotExist
+  # externalIPs: true
   loadBalancerIPs: true
