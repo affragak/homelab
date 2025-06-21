@@ -7,3 +7,4 @@ resources:
   - cert-manager
   - cloudnativepg
   - plugin-barman-cloud
+  - external-dns
