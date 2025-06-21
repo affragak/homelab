@@ -6,4 +6,4 @@ resources:
   - synology-csi
   - cert-manager
   - cloudnativepg
-  # - renovate
+  - plugin-barman-cloud
