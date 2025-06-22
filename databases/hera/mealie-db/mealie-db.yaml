@@ -70,8 +70,10 @@ spec:
         - selectorType: rw
           serviceTemplate:
             metadata:
-              name: mealie-db-v1
+              name: mealie-db-lb
               labels:
                 org: olympus
+              annotations:
+                external-dns.alpha.kubernetes.io/hostname: mealie-pg.uclab8.net
             spec:
-              type: ClusterIP
+              type: LoadBalancer
