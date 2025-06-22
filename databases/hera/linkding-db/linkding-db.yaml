@@ -39,7 +39,7 @@ spec:
         name: barman-cloud.cloudnative-pg.io
         parameters:
           barmanObjectName: minio-s3
-          serverName: linkding-db-production-cnpg-v1
+          serverName: linkding-db-production-cnpg-v0
 
   backup:
     barmanObjectStore:
@@ -70,7 +70,7 @@ spec:
         - selectorType: rw
           serviceTemplate:
             metadata:
-              name: linkding-db-v1
+              name: linkding-db-v2
               labels:
                 org: olympus
             spec:
