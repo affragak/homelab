@@ -1,0 +1,10 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Backup
+metadata:
+  name: commafeed-db-production-cnpg-v0
+spec:
+  method: plugin
+  cluster:
+    name: commafeed-db-production-cnpg-v0
+  pluginConfiguration:
+    name: barman-cloud.cloudnative-pg.io

@@ -1,0 +1,73 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: commafeed-db-production-cnpg-v0
+  namespace: commafeed
+spec:
+  description: Postgres cluster for the commafeed application
+  imageName: quay.io/enterprisedb/postgresql:16.1
+  instances: 3
+  monitoring:
+    enablePodMonitor: true
+
+  plugins:
+    - name: barman-cloud.cloudnative-pg.io
+      parameters:
+        barmanObjectName: minio-s3
+  backup:
+    barmanObjectStore:
+      destinationPath: "s3://backups/"
+      endpointURL: "http://atlas.uclab8.net:9000"
+      s3Credentials:
+        accessKeyId:
+          name: minio-s3
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: minio-s3
+          key: ACCESS_SECRET_KEY
+      wal:
+        compression: gzip
+      data:
+        compression: gzip
+    retentionPolicy: 7d
+
+  affinity:
+    nodeSelector:
+      node-role.kubernetes.io/db: "true"
+
+  inheritedMetadata:
+    labels:
+      app: commafeed-database
+
+  storage:
+    pvcTemplate:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: synology-iscsi-storage
+      volumeMode: Filesystem
+  bootstrap:
+    initdb:
+      database: commafeed
+      owner: affragak
+      secret:
+        name: commafeed-db-creds
+  resources:
+    requests:
+      memory: 320Mi
+  managed:
+    services:
+      disabledDefaultServices:
+        - ro
+        - r
+      additional:
+        - selectorType: rw
+          serviceTemplate:
+            metadata:
+              name: commafeed-db
+              labels:
+                org: empire
+            spec:
+              type: ClusterIP
