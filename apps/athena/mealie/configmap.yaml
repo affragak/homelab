@@ -6,4 +6,4 @@ data:
   DB_ENGINE: postgres
   POSTGRES_DB: mealie
   POSTGRES_PORT: "5432"
-  POSTGRES_SERVER: mealie-db-v1.mealie.svc.cluster.local
+  POSTGRES_SERVER: mealie-pg.uclab8.net
