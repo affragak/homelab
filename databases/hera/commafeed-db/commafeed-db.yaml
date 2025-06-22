@@ -70,7 +70,7 @@ spec:
         - selectorType: rw
           serviceTemplate:
             metadata:
-              name: commafeed-db-lb
+              name: commafeed-db-lb-v2
               labels:
                 org: olympus
               annotations:

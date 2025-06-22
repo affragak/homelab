@@ -8,4 +8,4 @@ resources:
   - barmanobjectstore.yaml
   - database.yaml
   - scheduled-backup.yaml
-  # - commafeed-db.yaml
+  - commafeed-db.yaml
