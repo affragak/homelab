@@ -7,4 +7,4 @@ spec:
   schedule: "0 0 3 * * *"
   backupOwnerReference: cluster
   cluster:
-    name: commafeed-db-production-cnpg-v0
+    name: commafeed-db-production-cnpg-v2
