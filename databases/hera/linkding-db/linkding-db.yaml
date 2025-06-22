@@ -15,10 +15,6 @@ spec:
       parameters:
         barmanObjectName: minio-s3
 
-  affinity:
-    nodeSelector:
-      node-role.kubernetes.io/db: "true"
-
   inheritedMetadata:
     labels:
       app: linkding-database
