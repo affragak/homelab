@@ -2,7 +2,7 @@ apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: commafeed-db-creds
-  namespace: external-secrets
+  namespace: commafeed
 spec:
   refreshInterval: "15s"
   secretStoreRef:
