@@ -31,10 +31,6 @@ spec:
         compression: gzip
     retentionPolicy: 7d
 
-  affinity:
-    nodeSelector:
-      node-role.kubernetes.io/db: "true"
-
   inheritedMetadata:
     labels:
       app: commafeed-database
@@ -68,6 +64,6 @@ spec:
             metadata:
               name: commafeed-db
               labels:
-                org: empire
+                org: olympus
             spec:
               type: ClusterIP
