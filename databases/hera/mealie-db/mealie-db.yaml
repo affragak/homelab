@@ -1,7 +1,7 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: mealie-db-production-cnpg-v1
+  name: mealie-db-production-cnpg-v2
   namespace: mealie
 spec:
   description: Postgres cluster for the mealie application
@@ -39,7 +39,7 @@ spec:
         name: barman-cloud.cloudnative-pg.io
         parameters:
           barmanObjectName: minio-s3
-          serverName: mealie-db-production-cnpg-v0
+          serverName: mealie-db-production-cnpg-v1
 
   backup:
     barmanObjectStore:
