@@ -62,8 +62,10 @@ spec:
         - selectorType: rw
           serviceTemplate:
             metadata:
-              name: commafeed-db
+              name: commafeed-db-lb
               labels:
                 org: olympus
+              annotations:
+                external-dns.alpha.kubernetes.io/hostname: commafeed-pg.uclab8.net
             spec:
-              type: ClusterIP
+              type: LoadBalancer
