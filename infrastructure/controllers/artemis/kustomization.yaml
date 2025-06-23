@@ -4,4 +4,4 @@ resources:
   - cilium
   - external-secrets
   - synology-csi
-  # - cert-manager
+  - cert-manager
