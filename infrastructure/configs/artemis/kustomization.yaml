@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - cilium
   - external-secrets
-  # - synology-csi
+  - synology-csi
   # - cert-manager
