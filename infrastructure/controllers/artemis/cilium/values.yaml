@@ -1,0 +1,107 @@
+ipam:
+  mode: kubernetes
+
+kubeProxyReplacement: true
+
+securityContext:
+  capabilities:
+    ciliumAgent:
+      - CHOWN
+      - KILL
+      - NET_ADMIN
+      - NET_RAW
+      - IPC_LOCK
+      - SYS_ADMIN
+      - SYS_RESOURCE
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+    cleanCiliumState:
+      - NET_ADMIN
+      - SYS_ADMIN
+      - SYS_RESOURCE
+
+cgroup:
+  autoMount:
+    enabled: false
+  hostRoot: /sys/fs/cgroup
+
+k8sServiceHost: localhost
+k8sServicePort: 7445
+
+hubble:
+  enabled: true
+  # metrics:
+  #   enabled:
+  #     - dns
+  #     - drop
+  #     - tcp
+  #     - flow
+  #     - port-distribution
+  #     - icmp
+  #     - httpV2:sourceContext=workload-name|pod-name|reserved-identity;destinationContext=workload-name|pod-name|reserved-identity;labelsContext=source_namespace,destination_namespace,traffic_direction
+  #   enableOpenMetrics: true
+  relay:
+    enabled: true
+  ui:
+    enabled: true
+    # serviceMonitor:
+    #   enabled: true
+    #   annotations:
+    #     prometheus.io/scrape: "true"
+    #     prometheus.io/port: "9965"
+    #   labels:
+    #     release: kube-prometheus-stack
+
+l2announcements:
+  enabled: true
+
+externalIPs:
+  enabled: true
+
+ingressController:
+  enabled: true
+  default: true
+  loadbalancerMode: shared
+  service:
+    labels:
+      org: olympus
+
+k8sClientRateLimit:
+  qps: 15
+  burst: 20
+
+# metrics
+#
+# agent:
+#   prometheus:
+#     enabled: true
+#     annotations:
+#       prometheus.io/scrape: "true"
+#       prometheus.io/port: "9962"
+#   podAnnotations:
+#     prometheus.io/scrape: "true"
+#     prometheus.io/port: "9962"
+
+# prometheus:
+#   enabled: true
+#   serviceMonitor:
+#     enabled: true
+#     labels:
+#       release: kube-prometheus-stack
+#     annotations:
+#       prometheus.io/scrape: "true"
+#       prometheus.io/port: "9962"
+
+operator:
+  replicas: 1
+  # prometheus:
+  #   enabled: true
+  #   serviceMonitor:
+  #     enabled: true
+  #   annotations:
+  #     prometheus.io/scrape: "true"
+  #     prometheus.io/port: "9963"
+  #     labels:
+  #       release: kube-prometheus-stack
