@@ -22,6 +22,7 @@ jobs:
         run: |
           flux install \
             --export > ./clusters/athena/flux-system/gotk-components.yaml
+            --export > ./clusters/artemis/flux-system/gotk-components.yaml
 
           VERSION="$(flux -v)"
           echo "flux_version=$VERSION" >> $GITHUB_OUTPUT
