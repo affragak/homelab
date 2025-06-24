@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/instance: blog-uclab8
     app.kubernetes.io/name: nginx
-    org: empire
+    org: olympus
   name: nginx-ingress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
