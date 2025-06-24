@@ -1,4 +1,4 @@
-name: update-flux
+name: update-flux-athena
 
 on:
   workflow_dispatch:
@@ -21,7 +21,6 @@ jobs:
         id: update
         run: |
           flux install \
-            --export > ./clusters/athena/flux-system/gotk-components.yaml
             --export > ./clusters/artemis/flux-system/gotk-components.yaml
 
           VERSION="$(flux -v)"
