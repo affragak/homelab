@@ -4,6 +4,8 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
   name: pihole-ingress
+  labels:
+    org: olympus
 spec:
   ingressClassName: cilium
   rules:
