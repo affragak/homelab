@@ -1,4 +1,4 @@
-name: update-flux-athena
+name: update-flux-artemis
 
 on:
   workflow_dispatch:
