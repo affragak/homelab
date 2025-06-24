@@ -13,9 +13,6 @@ spec:
       labels:
         app: commafeed
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: k8s-worker-prod-03
-
       securityContext:
         runAsUser: 1000
         runAsGroup: 3000
