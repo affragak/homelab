@@ -12,9 +12,6 @@ spec:
       labels:
         app: linkding
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: k8s-worker-prod-01
-
       securityContext:
         allowPrivilegeEscalation: false
         runAsNonRoot: true
