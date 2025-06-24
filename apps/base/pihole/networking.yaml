@@ -30,5 +30,5 @@ spec:
   selector:
     app: pihole
   externalTrafficPolicy: Local
-  loadBalancerIP: 10.10.10.20 # this is your DNS IP, NOT THE GUI!
+  loadBalancerIP: 10.10.10.189 # this is your DNS IP, NOT THE GUI!
   type: LoadBalancer
