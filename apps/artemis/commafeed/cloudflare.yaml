@@ -12,8 +12,6 @@ spec:
       labels:
         app: cloudflared
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: k8s-worker-prod-03
       containers:
         - name: cloudflared
           image: cloudflare/cloudflared:latest
