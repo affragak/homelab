@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mealie-configmap
+data:
+  DB_ENGINE: postgres
+  POSTGRES_DB: mealie
+  POSTGRES_PORT: "5432"
+  POSTGRES_SERVER: mealie-pg.uclab8.net
