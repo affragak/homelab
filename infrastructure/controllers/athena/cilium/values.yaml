@@ -92,7 +92,7 @@ prometheus:
       prometheus.io/port: "9962"
 
 operator:
-  replicase: 1
+  replicas: 1
   prometheus:
     enabled: true
     serviceMonitor:
