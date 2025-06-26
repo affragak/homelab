@@ -5,3 +5,4 @@ resources:
   - external-secrets
   - synology-csi
   - cert-manager
+  - renovate
