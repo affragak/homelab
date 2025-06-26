@@ -4,5 +4,3 @@ namespace: kube-system
 resources:
   - lb-pool.yaml
   - l2-policy.yaml
-  - w1-lb-pool.yaml
-  - w1-l2-policy.yaml

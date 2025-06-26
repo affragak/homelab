@@ -11,5 +11,5 @@ spec:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
         operator: DoesNotExist
-  externalIPs: true
+  # externalIPs: true
   loadBalancerIPs: true
