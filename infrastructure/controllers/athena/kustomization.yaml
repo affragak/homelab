@@ -7,4 +7,4 @@ resources:
   - cert-manager
   - synology-csi
   # - longhorn
-  - renovate
+  # - renovate
