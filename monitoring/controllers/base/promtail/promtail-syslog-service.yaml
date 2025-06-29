@@ -5,7 +5,7 @@ metadata:
   namespace: monitoring
 spec:
   selector:
-    app.kubernetes.io/name: promtail
+    name: promtail
   ports:
     - protocol: TCP
       port: 1514 # The port Syslog-NG will use to send logs
