@@ -33,6 +33,11 @@ spec:
             schema: v13
     singleBinary:
       replicas: 1
+      persistence:
+        storageClass: synology-iscsi-storage
+        accessModes:
+          - ReadWriteOnce
+        size: 5Gi
     read:
       replicas: 0
     backend:
