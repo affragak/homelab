@@ -53,6 +53,9 @@ prometheus:
     #    ruleSelectorNilUsesHelmValues: false
     #    serviceMonitorSelectorNilUsesHelmValues: false
     additionalScrapeConfigs:
+      - job_name: "mktxp"
+        static_configs:
+          - targets: ["mktxp_machine_IP:49090"]
       - job_name: "kubernetes-pods"
         kubernetes_sd_configs:
           - role: pod
