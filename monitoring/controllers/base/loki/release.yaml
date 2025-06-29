@@ -49,8 +49,10 @@ spec:
         enabled: true
         grafanaAgent:
           installOperator: false
-      # dashboards:
-      #   enabled: false
-      # rules:
-      #   enabled: false
-      #   alerting: false
+    chunksCache:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 512Mi
+        limits:
+          memory: 512Mi
