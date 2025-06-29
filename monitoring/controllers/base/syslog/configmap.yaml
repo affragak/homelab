@@ -19,7 +19,7 @@ data:
         file("/var/log/messages");
     };
     destination d_loki {
-         syslog("promtail-syslog.monitoring.svc.cluster.local" transport("tcp") port(1514));
+        syslog("promtail" transport("tcp") port("1514"));
     };
     log {
         source(s_local);
